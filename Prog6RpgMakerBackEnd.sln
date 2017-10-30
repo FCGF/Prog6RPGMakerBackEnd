@@ -5,6 +5,14 @@ VisualStudioVersion = 15.0.26730.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prog6RpgMakerBackEnd", "Prog6RpgMakerBackEnd\Prog6RpgMakerBackEnd.csproj", "{CC791DA8-2228-43D8-A2D8-A9B03225BF86}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RpgMaker.Model", "RpgMaker.Model\RpgMaker.Model.csproj", "{BA414CD8-ABD7-4166-A366-0A49943E354F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RpgMaker.ModelImplementation", "RpgMaker.ModelImplementation\RpgMaker.ModelImplementation.csproj", "{28651EEF-7B16-417E-9F80-69500EF0C277}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RpgMaker.Data", "RpgMaker.Data\RpgMaker.Data.csproj", "{A2FCAB63-7C34-4969-9900-0FBC736D02DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RpgMaker.Data.NHibernate", "RpgMaker.Data.NHibernate\RpgMaker.Data.NHibernate.csproj", "{470707D9-E1C2-4291-9832-44C25309C511}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +23,22 @@ Global
 		{CC791DA8-2228-43D8-A2D8-A9B03225BF86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC791DA8-2228-43D8-A2D8-A9B03225BF86}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC791DA8-2228-43D8-A2D8-A9B03225BF86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA414CD8-ABD7-4166-A366-0A49943E354F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA414CD8-ABD7-4166-A366-0A49943E354F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA414CD8-ABD7-4166-A366-0A49943E354F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA414CD8-ABD7-4166-A366-0A49943E354F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28651EEF-7B16-417E-9F80-69500EF0C277}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28651EEF-7B16-417E-9F80-69500EF0C277}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28651EEF-7B16-417E-9F80-69500EF0C277}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28651EEF-7B16-417E-9F80-69500EF0C277}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2FCAB63-7C34-4969-9900-0FBC736D02DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2FCAB63-7C34-4969-9900-0FBC736D02DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2FCAB63-7C34-4969-9900-0FBC736D02DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2FCAB63-7C34-4969-9900-0FBC736D02DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{470707D9-E1C2-4291-9832-44C25309C511}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{470707D9-E1C2-4291-9832-44C25309C511}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{470707D9-E1C2-4291-9832-44C25309C511}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{470707D9-E1C2-4291-9832-44C25309C511}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
