@@ -1,41 +1,58 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NHibernate;
 using RpgMaker.Model;
 
 namespace RpgMaker.Data.NHibernate {
   public abstract class AbstractRepository<TId, TEntity> : IRepository<TId, TEntity> where TEntity : class, IEntity<TId> {
 
+    private readonly SessionFactory sessionFactory;
+
+    protected AbstractRepository(SessionFactory sessionFactory) {
+      this.sessionFactory = sessionFactory;
+    }
+
     protected ISession Session {
-      get {
-        NHibernateUtil.
-      }
+      get { return sessionFactory.OpenSession(); }
     }
 
     public TEntity Find(TId id) {
-      throw new NotImplementedException();
+      return Session.Get<TEntity>(id);
     }
 
     public TEntity Save(TEntity entity) {
-      throw new NotImplementedException();
+      return Session.Save(entity) as TEntity;
     }
 
     public void Update(TEntity entity) {
-      throw new NotImplementedException();
+      Session.Update(entity);
     }
 
     public TEntity SaveOrUpdate(TEntity entity) {
-      throw new NotImplementedException();
+      Session.SaveOrUpdate(entity);
+      return Find(entity.Id);
     }
 
     public void Delete(TEntity entity) {
-      throw new NotImplementedException();
+      Session.Delete(entity);
     }
 
-    protected T Command(Func<bool , bool>)
+    protected T Command<T>(Func<ISession, T> function) {
+      T result = default(T);
+
+      using (ISession session = Session) {
+        using (ITransaction transaction = session.BeginTransaction()) {
+          try {
+            transaction.Begin();
+            result = function(session);
+            transaction.Commit();
+          } catch (Exception e) {
+            transaction.Rollback();
+          }
+        }
+      }
+
+      return result;
+    }
 
   }
 }
