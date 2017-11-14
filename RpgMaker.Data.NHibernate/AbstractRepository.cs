@@ -45,8 +45,9 @@ namespace RpgMaker.Data.NHibernate {
             transaction.Begin();
             result = function(session);
             transaction.Commit();
-          } catch (Exception e) {
+          } catch (Exception) {
             transaction.Rollback();
+            throw;
           }
         }
       }

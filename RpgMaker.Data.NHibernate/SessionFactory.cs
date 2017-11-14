@@ -2,6 +2,7 @@
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using NHibernate;
+using NHibernate.Tool.hbm2ddl;
 
 namespace RpgMaker.Data.NHibernate {
   public class SessionFactory {
@@ -17,6 +18,9 @@ namespace RpgMaker.Data.NHibernate {
                              Database(MySQLConfiguration.Standard.ShowSql().ConnectionString(connectionString)).
                              Mappings(m => m.FluentMappings.AddFromAssembly(this.GetType().Assembly));
           sessionFactory = cfg.BuildSessionFactory();
+          var schema = new SchemaExport(cfg.BuildConfiguration());
+          schema.Execute(true, true, false);
+
           BuildSchema(cfg);
         }
       }

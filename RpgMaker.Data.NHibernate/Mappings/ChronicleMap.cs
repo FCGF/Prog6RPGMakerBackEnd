@@ -2,12 +2,14 @@
 using RpgMaker.Model;
 
 namespace RpgMaker.Data.NHibernate.Mappings {
-  public class CharacterSheetMap : ClassMap<ICharacterSheet> {
+  public class ChronicleMap : ClassMap<IChronicle> {
 
-    public CharacterSheetMap() {
+    public ChronicleMap() {
       Id(x => x.Id).GeneratedBy.Identity().UnsavedValue(0);
+      References(x => x.GameMaster);
       Map(x => x.GameType);
-      Map(x => x.SheetLocation);
+      Map(x => x.Name);
+      HasManyToMany(x => x.Players);
     }
 
   }
