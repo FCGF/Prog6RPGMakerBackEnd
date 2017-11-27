@@ -2,6 +2,7 @@
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
+using Microsoft.Owin.Security.Google;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
 using Prog6RpgMakerBackEnd.Models;
@@ -39,23 +40,23 @@ namespace Prog6RpgMakerBackEnd {
       app.UseOAuthBearerTokens(OAuthOptions);
 
       // Uncomment the following lines to enable logging in with third party login providers
-      //app.UseMicrosoftAccountAuthentication(
-      //    clientId: "",
-      //    clientSecret: "");
+      app.UseMicrosoftAccountAuthentication(
+          clientId: "54d4be65-7e36-4be4-a76e-65c7f538cd1f",
+          clientSecret: "xugrB3[#-uarCREJDN0618]");
 
-      //app.UseTwitterAuthentication(
-      //    consumerKey: "",
-      //    consumerSecret: "");
+      app.UseTwitterAuthentication(
+          consumerKey: "zvl5knTBUP9sydZdlIXQOvlgY",
+          consumerSecret: "Lq7ZkplxZFMdEvLpQMU9TiLKIBmyWVjZ4gQSZs4Qh6EiBbf1yo");
 
       //app.UseFacebookAuthentication(
       //    appId: "",
       //    appSecret: "");
 
-      //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-      //{
-      //    ClientId = "",
-      //    ClientSecret = ""
-      //});
+      //One Click
+      app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions() {
+        ClientId = "582684262746-g6ognjvpivfk8j0vrtnl4qphbm1c3eq7.apps.googleusercontent.com",
+        ClientSecret = "H6fL-xB7M3S0P3mGIViKpVV0"
+      });
     }
   }
 }
