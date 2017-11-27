@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.15
+VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prog6RpgMakerBackEnd", "Prog6RpgMakerBackEnd\Prog6RpgMakerBackEnd.csproj", "{CC791DA8-2228-43D8-A2D8-A9B03225BF86}"
 EndProject
@@ -12,6 +12,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RpgMaker.Data", "RpgMaker.Data\RpgMaker.Data.csproj", "{A2FCAB63-7C34-4969-9900-0FBC736D02DA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RpgMaker.Data.NHibernate", "RpgMaker.Data.NHibernate\RpgMaker.Data.NHibernate.csproj", "{470707D9-E1C2-4291-9832-44C25309C511}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RpgMaker.Service", "RpgMaker.Service\RpgMaker.Service.csproj", "{3888DE4A-735E-4003-973F-CE7DC4010A39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RpgMaker.ServiceImplementation", "RpgMaker.ServiceImplementation\RpgMaker.ServiceImplementation.csproj", "{5BA0E472-0D15-4894-80E7-DE2EE73B6EE4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{470707D9-E1C2-4291-9832-44C25309C511}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{470707D9-E1C2-4291-9832-44C25309C511}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{470707D9-E1C2-4291-9832-44C25309C511}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3888DE4A-735E-4003-973F-CE7DC4010A39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3888DE4A-735E-4003-973F-CE7DC4010A39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3888DE4A-735E-4003-973F-CE7DC4010A39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3888DE4A-735E-4003-973F-CE7DC4010A39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BA0E472-0D15-4894-80E7-DE2EE73B6EE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BA0E472-0D15-4894-80E7-DE2EE73B6EE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BA0E472-0D15-4894-80E7-DE2EE73B6EE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BA0E472-0D15-4894-80E7-DE2EE73B6EE4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

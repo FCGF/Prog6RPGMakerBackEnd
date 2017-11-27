@@ -9,5 +9,7 @@
     int SpecialMultiplier { get; set; }
     string Specialization { get; set; }
 
+    int CalculatePrice();
+
   }
 }

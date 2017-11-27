@@ -10,5 +10,16 @@ namespace RpgMaker.ModelImplementation {
     public int SpecialMultiplier { get; set; }
     public string Specialization { get; set; }
 
+    public int CalculatePrice() {
+      int multiplier = GetCurrentMultiplier();
+      return this.CurrentValue * multiplier;
+    }
+
+    private int GetCurrentMultiplier() {
+      return CurrentValue > 5
+            ? SpecialMultiplier
+            : PriceMultiplier;
+    }
+
   }
 }
