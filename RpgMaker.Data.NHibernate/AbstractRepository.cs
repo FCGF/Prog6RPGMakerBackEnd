@@ -45,7 +45,7 @@ namespace RpgMaker.Data.NHibernate {
     }
 
     public void Delete(TEntity entity) {
-      return Command((ISession session) => {
+      Command((ISession session) => {
         session.Delete(entity);
         return entity;
       });
