@@ -1,18 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
 using RpgMaker.Data;
+using RpgMaker.Injection;
 using RpgMaker.Model;
 using RpgMaker.ModelImplementation;
 
 namespace Prog6RpgMakerBackEnd.Controllers {
   public class ChronicleController : ApiController {
 
-    private IChronicleRepository repository;
-
-    public ChronicleController(IChronicleRepository repository)
-      : base() {
-      this.repository = repository;
-    }
+    private IChronicleRepository repository = ContainerFactory.Container.GetInstance<IChronicleRepository>();
 
     // GET: api/Chronicle
     public IEnumerable<IChronicle> Get() {
@@ -25,13 +21,13 @@ namespace Prog6RpgMakerBackEnd.Controllers {
     }
 
     // POST: api/Chronicle
-    public void Post([FromBody]IChronicle value) {
+    public void Post([FromBody]Chronicle value) {
       value.Id = 0;
       repository.Save(value);
     }
 
     // PUT: api/Chronicle/5
-    public void Put(long id, [FromBody]IChronicle value) {
+    public void Put(long id, [FromBody]Chronicle value) {
       value.Id = id;
       repository.Update(value);
     }

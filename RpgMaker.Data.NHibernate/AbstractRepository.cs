@@ -25,20 +25,30 @@ namespace RpgMaker.Data.NHibernate {
     }
 
     public TEntity Save(TEntity entity) {
-      return Session.Save(entity) as TEntity;
+      return Command((ISession session) => {
+        return session.Save(entity) as TEntity;
+      });
     }
 
     public void Update(TEntity entity) {
-      Session.Update(entity);
+      Command((ISession session) => {
+        session.Update(entity);
+        return entity;
+      });
     }
 
     public TEntity SaveOrUpdate(TEntity entity) {
-      Session.SaveOrUpdate(entity);
-      return Find(entity.Id);
+      return Command((ISession session) => {
+        session.SaveOrUpdate(entity);
+        return Find(entity.Id);
+      });
     }
 
     public void Delete(TEntity entity) {
-      Session.Delete(entity);
+      return Command((ISession session) => {
+        session.Delete(entity);
+        return entity;
+      });
     }
 
     protected T Command<T>(Func<ISession, T> function) {

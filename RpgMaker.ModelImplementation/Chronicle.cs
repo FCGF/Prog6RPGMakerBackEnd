@@ -4,9 +4,9 @@ using RpgMaker.Model.Enum;
 
 namespace RpgMaker.ModelImplementation {
   public class Chronicle : Entity<long>, IChronicle {
-    public string Name { get; set; }
-    public IList<IPlayer> Players { get; set; }
-    public GameType GameType { get; set; }
-    public IPlayer GameMaster { get; set; }
+    public virtual string Name { get; set; }
+    public virtual IList<IPlayer> Players { get; set; }
+    public virtual GameType GameType { get; set; }
+    public virtual IPlayer GameMaster { get; set; }
   }
 }

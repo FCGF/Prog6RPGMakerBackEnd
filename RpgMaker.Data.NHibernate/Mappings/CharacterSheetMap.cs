@@ -1,8 +1,8 @@
 ﻿using FluentNHibernate.Mapping;
-using RpgMaker.Model;
+using RpgMaker.ModelImplementation;
 
 namespace RpgMaker.Data.NHibernate.Mappings {
-  public class CharacterSheetMap : ClassMap<ICharacterSheet> {
+  public class CharacterSheetMap : ClassMap<CharacterSheet> {
 
     public CharacterSheetMap() {
       Id(x => x.Id).GeneratedBy.Identity().UnsavedValue(0);

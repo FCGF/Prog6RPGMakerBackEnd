@@ -1,18 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
 using RpgMaker.Data;
+using RpgMaker.Injection;
 using RpgMaker.Model;
 using RpgMaker.ModelImplementation;
 
 namespace Prog6RpgMakerBackEnd.Controllers {
   public class PlayerController : ApiController {
 
-    private IPlayerRepository repository;
-
-    public PlayerController(IPlayerRepository repository)
-      : base() {
-      this.repository = repository;
-    }
+    private IPlayerRepository repository = ContainerFactory.Container.GetInstance<IPlayerRepository>();
 
     // GET: api/Player
     public IEnumerable<IPlayer> Get() {
@@ -25,13 +21,13 @@ namespace Prog6RpgMakerBackEnd.Controllers {
     }
 
     // POST: api/Player
-    public void Post([FromBody]IPlayer value) {
+    public void Post([FromBody]Player value) {
       value.Id = 0;
       repository.Save(value);
     }
 
     // PUT: api/Player/5
-    public void Put(long id, [FromBody]IPlayer value) {
+    public void Put(long id, [FromBody]Player value) {
       value.Id = id;
       repository.Update(value);
     }

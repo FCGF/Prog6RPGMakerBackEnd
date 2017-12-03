@@ -1,18 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
 using RpgMaker.Data;
+using RpgMaker.Injection;
 using RpgMaker.Model;
 using RpgMaker.ModelImplementation;
 
 namespace Prog6RpgMakerBackEnd.Controllers {
   public class CharacterSheetController : ApiController {
 
-    private ICharacterSheetRepository repository;
-
-    public CharacterSheetController(ICharacterSheetRepository repository)
-      : base() {
-      this.repository = repository;
-    }
+    private ICharacterSheetRepository repository = ContainerFactory.Container.GetInstance<ICharacterSheetRepository>();
 
     // GET: api/CharacterSheet
     public IEnumerable<ICharacterSheet> Get() {
@@ -25,13 +21,13 @@ namespace Prog6RpgMakerBackEnd.Controllers {
     }
 
     // POST: api/CharacterSheet
-    public void Post([FromBody]ICharacterSheet value) {
+    public void Post([FromBody]CharacterSheet value) {
       value.Id = 0;
       repository.Save(value);
     }
 
     // PUT: api/CharacterSheet/5
-    public void Put(long id, [FromBody]ICharacterSheet value) {
+    public void Put(long id, [FromBody]CharacterSheet value) {
       value.Id = id;
       repository.Update(value);
     }

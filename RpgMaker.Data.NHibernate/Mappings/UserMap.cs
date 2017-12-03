@@ -1,8 +1,8 @@
 ﻿using FluentNHibernate.Mapping;
-using RpgMaker.Model;
+using RpgMaker.ModelImplementation;
 
 namespace RpgMaker.Data.NHibernate.Mappings {
-  public class UserMap : ClassMap<IUser> {
+  public class UserMap : ClassMap<User> {
 
     public UserMap() {
       Id(x => x.Id).GeneratedBy.Identity().UnsavedValue(0);

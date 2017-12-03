@@ -2,15 +2,15 @@
 
 namespace RpgMaker.ModelImplementation {
   public class Attribute : Entity<long>, IAttribute {
-    public string Name { get; set; }
-    public int CurrentValue { get; set; }
-    public int MinimunValue { get; set; }
-    public int MaximumValue { get; set; }
-    public int PriceMultiplier { get; set; }
-    public int SpecialMultiplier { get; set; }
-    public string Specialization { get; set; }
+    public virtual string Name { get; set; }
+    public virtual int CurrentValue { get; set; }
+    public virtual int MinimunValue { get; set; }
+    public virtual int MaximumValue { get; set; }
+    public virtual int PriceMultiplier { get; set; }
+    public virtual int SpecialMultiplier { get; set; }
+    public virtual string Specialization { get; set; }
 
-    public int CalculatePrice() {
+    public virtual int CalculatePrice() {
       int multiplier = GetCurrentMultiplier();
       return this.CurrentValue * multiplier;
     }

@@ -2,7 +2,7 @@
 
 namespace RpgMaker.ModelImplementation {
   public class User : Entity<long>, IUser {
-    public string Email { get; set; }
-    public string NickName { get; set; }
+    public virtual string Email { get; set; }
+    public virtual string NickName { get; set; }
   }
 }

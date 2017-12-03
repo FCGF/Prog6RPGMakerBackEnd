@@ -2,7 +2,7 @@
 
 namespace RpgMaker.ModelImplementation {
   public abstract class Entity<T> : IEntity<T> {
-    public T Id { get; set; }
+    public virtual T Id { get; set; }
 
   }
 }

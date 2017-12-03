@@ -1,15 +1,15 @@
 ﻿using FluentNHibernate.Mapping;
-using RpgMaker.Model;
+using RpgMaker.ModelImplementation;
 
 namespace RpgMaker.Data.NHibernate.Mappings {
-  public class GameCharacterMap : ClassMap<IGameCharacter> {
+  public class GameCharacterMap : ClassMap<GameCharacter> {
 
     public GameCharacterMap() {
       Id(x => x.Id).GeneratedBy.Identity().UnsavedValue(0);
-      HasMany(x => x.Attributes);
-      References(x => x.Chronicle);
+      HasMany<Attribute>(x => x.Attributes);
+      References<Chronicle>(x => x.Chronicle);
       Map(x => x.Experience);
-      References(x => x.Player);
+      References<Player>(x => x.Player);
     }
 
   }

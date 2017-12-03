@@ -3,9 +3,9 @@ using RpgMaker.Model;
 
 namespace RpgMaker.ModelImplementation {
   public class GameCharacter : Entity<long>, IGameCharacter {
-    public IPlayer Player { get; set; }
-    public IChronicle Chronicle { get; set; }
-    public IList<IAttribute> Attributes { get; set; }
-    public int Experience { get; set; }
+    public virtual IPlayer Player { get; set; }
+    public virtual IChronicle Chronicle { get; set; }
+    public virtual IList<IAttribute> Attributes { get; set; }
+    public virtual int Experience { get; set; }
   }
 }

@@ -1,4 +1,5 @@
-﻿using FluentNHibernate;
+﻿using System.Data;
+using FluentNHibernate;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using NHibernate;
@@ -29,7 +30,7 @@ namespace RpgMaker.Data.NHibernate {
 
     private static void BuildSchema(FluentConfiguration configuration) {
       var sessionSource = new SessionSource(configuration);
-      var session = sessionSource.CreateSession();
+      ISession session = sessionSource.CreateSession();
       sessionSource.BuildSchema(session);
     }
 

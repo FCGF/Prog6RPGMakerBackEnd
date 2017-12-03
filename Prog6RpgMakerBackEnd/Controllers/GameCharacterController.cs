@@ -1,18 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
 using RpgMaker.Data;
+using RpgMaker.Injection;
 using RpgMaker.Model;
 using RpgMaker.ModelImplementation;
 
 namespace Prog6RpgMakerBackEnd.Controllers {
   public class GameCharacterController : ApiController {
 
-    private IGameCharacterRepository repository;
-
-    public GameCharacterController(IGameCharacterRepository repository)
-      : base() {
-      this.repository = repository;
-    }
+    private IGameCharacterRepository repository = ContainerFactory.Container.GetInstance<IGameCharacterRepository>();
 
     // GET: api/GameCharacter
     public IEnumerable<IGameCharacter> Get() {
@@ -25,13 +21,13 @@ namespace Prog6RpgMakerBackEnd.Controllers {
     }
 
     // POST: api/GameCharacter
-    public void Post([FromBody]IGameCharacter value) {
+    public void Post([FromBody]GameCharacter value) {
       value.Id = 0;
       repository.Save(value);
     }
 
     // PUT: api/GameCharacter/5
-    public void Put(long id, [FromBody]IGameCharacter value) {
+    public void Put(long id, [FromBody]GameCharacter value) {
       value.Id = id;
       repository.Update(value);
     }

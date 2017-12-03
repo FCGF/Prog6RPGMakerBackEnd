@@ -1,18 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
 using RpgMaker.Data;
+using RpgMaker.Injection;
 using RpgMaker.Model;
 using RpgMaker.ModelImplementation;
 
 namespace Prog6RpgMakerBackEnd.Controllers {
   public class UserController : ApiController {
 
-    private IUserRepository repository;
-
-    public UserController(IUserRepository repository)
-      : base() {
-      this.repository = repository;
-    }
+    private IUserRepository repository = ContainerFactory.Container.GetInstance<IUserRepository>();
 
     // GET: api/User
     public IEnumerable<IUser> Get() {
@@ -25,13 +21,13 @@ namespace Prog6RpgMakerBackEnd.Controllers {
     }
 
     // POST: api/User
-    public void Post([FromBody]IUser value) {
+    public void Post([FromBody]User value) {
       value.Id = 0;
       repository.Save(value);
     }
 
     // PUT: api/User/5
-    public void Put(long id, [FromBody]IUser value) {
+    public void Put(long id, [FromBody]User value) {
       value.Id = id;
       repository.Update(value);
     }
