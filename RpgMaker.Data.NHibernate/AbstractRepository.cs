@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using NHibernate;
 using RpgMaker.Model;
 
@@ -17,6 +18,10 @@ namespace RpgMaker.Data.NHibernate {
 
     public TEntity Find(TId id) {
       return Session.Get<TEntity>(id);
+    }
+
+    public IEnumerable<TEntity> FindAll() {
+      return Session.QueryOver<TEntity>().Future();
     }
 
     public TEntity Save(TEntity entity) {
