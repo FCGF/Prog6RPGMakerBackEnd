@@ -381,6 +381,14 @@
       <Project>{BA414CD8-ABD7-4166-A366-0A49943E354F}</Project>
       <Name>RpgMaker.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RpgMaker.ServiceImplementation\RpgMaker.ServiceImplementation.csproj">
+      <Project>{5BA0E472-0D15-4894-80E7-DE2EE73B6EE4}</Project>
+      <Name>RpgMaker.ServiceImplementation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RpgMaker.Service\RpgMaker.Service.csproj">
+      <Project>{3888DE4A-735E-4003-973F-CE7DC4010A39}</Project>
+      <Name>RpgMaker.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
