@@ -1,11 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using RpgMaker.Data;
 using RpgMaker.Injection;
 using RpgMaker.Model;
 using RpgMaker.ModelImplementation;
 
 namespace Prog6RpgMakerBackEnd.Controllers {
+
+  [EnableCors("*", "*", "*")]
   public class GameCharacterController : ApiController {
 
     private IGameCharacterRepository repository = ContainerFactory.Container.GetInstance<IGameCharacterRepository>();
